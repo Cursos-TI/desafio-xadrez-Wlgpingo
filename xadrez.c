@@ -70,3 +70,29 @@ int main() {
     return 0;
 }
 
+#include <stdio.h>
+
+#define NUM_MOVIMENTOS 3  // Quantas vezes o cavalo vai fazer o L
+
+int main() {
+    printf("Movimentação do Cavalo (em L para Baixo + Esquerda):\n\n");
+
+    // Loop externo usando FOR para repetir o movimento L
+    for (int i = 0; i < NUM_MOVIMENTOS; i++) {
+        int passos_baixo = 0;
+
+        // Loop interno usando WHILE para 2 passos para baixo
+        while (passos_baixo < 2) {
+            printf("Baixo\n");
+            passos_baixo++;
+        }
+
+        // Um passo para a esquerda
+        printf("Esquerda\n");
+
+        printf("---\n"); // Separador visual entre os movimentos L
+    }
+
+    return 0;
+}
+
