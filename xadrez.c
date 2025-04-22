@@ -30,3 +30,43 @@ int main() {
 
     return 0;
 }
+
+#include <stdio.h>
+
+// Constantes para os movimentos
+#define MOVIMENTO_BISPO 5
+#define MOVIMENTO_TORRE 5
+#define MOVIMENTO_RAINHA 8
+
+int main() {
+    // Movimentação do Bispo (diagonal superior direita)
+    // Usaremos "Cima" seguido de "Direita" para simular diagonal
+    printf("Movimentação do Bispo (Diagonal Superior Direita):\n");
+    for (int i = 0; i < MOVIMENTO_BISPO; i++) {
+        printf("Cima\n");
+        printf("Direita\n");
+    }
+
+    printf("\n");
+
+    // Movimentação da Torre (para a direita)
+    printf("Movimentação da Torre (Direita):\n");
+    int j = 0;
+    while (j < MOVIMENTO_TORRE) {
+        printf("Direita\n");
+        j++;
+    }
+
+    printf("\n");
+
+    // Movimentação da Rainha (para a esquerda)
+    printf("Movimentação da Rainha (Esquerda):\n");
+    int k = 0;
+    do {
+        printf("Esquerda\n");
+        k++;
+    } while (k < MOVIMENTO_RAINHA);
+
+    return 0;
+}
+
