@@ -96,3 +96,66 @@ int main() {
     return 0;
 }
 
+#include <stdio.h>
+
+// Recursão para mover a Torre
+void moverTorre(int passo, int limite) {
+    if (passo >= limite) return;
+    printf("Direita\n");
+    moverTorre(passo + 1, limite);
+}
+
+// Recursão para mover a Rainha
+void moverRainha(int passo, int limite) {
+    if (passo >= limite) return;
+    printf("Esquerda\n");
+    moverRainha(passo + 1, limite);
+}
+
+// Bispo - loops aninhados para mover na diagonal superior direita
+void moverBispo(int movimentos) {
+    printf("Movimentação do Bispo (Diagonal Superior Direita):\n");
+    for (int i = 0; i < movimentos; i++) {
+        for (int j = 0; j < 1; j++) {
+            printf("Cima\n");
+            printf("Direita\n");
+        }
+    }
+    printf("---\n");
+}
+
+// Cavalo - loop com variáveis múltiplas e uso de continue/break
+void moverCavalo() {
+    printf("Movimentação do Cavalo (L para Cima + Direita):\n");
+    for (int i = 0, j = 0; i < 3 && j < 2; i++, j++) {
+        if (i == 1) {
+            printf("Direita\n");
+            break;
+        }
+        if (j == 1) {
+            continue;
+        }
+        printf("Cima\n");
+    }
+    printf("---\n");
+}
+
+int main() {
+    // Bispo
+    moverBispo(5);
+
+    // Torre
+    printf("Movimentação da Torre (Direita):\n");
+    moverTorre(0, 5);
+    printf("---\n");
+
+    // Rainha
+    printf("Movimentação da Rainha (Esquerda):\n");
+    moverRainha(0, 8);
+    printf("---\n");
+
+    // Cavalo
+    moverCavalo();
+
+    return 0;
+}
